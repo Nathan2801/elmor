@@ -1,2 +1,2 @@
 @echo off
-elm make src/Main.elm --output=./static/index.js
+elm make src/Main.elm --output=./index.js
