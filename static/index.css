@@ -1,0 +1,169 @@
+/** General */
+:root {
+    --bg-1: #181818;
+    --bg-2: #2a2a2a;
+    --link: #dea593;
+    --border: #000000;
+    --space: 4px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    color: white;
+    background: var(--bg-1);
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    padding-left: var(--space);
+    background: var(--bg-2);
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+.border {
+    border: 1px solid var(--border);
+    border-radius: var(--space);
+}
+
+.margin-bottom {
+    margin-bottom: var(--space);
+}
+
+/** Copy box */
+.copy-box {
+    position: relative;
+}
+
+.copy-box::before {
+    content: "Copied!";
+    display: block;
+    right: 0px;
+    position: absolute;
+    animation: 0.25s copy-box-appear;
+}
+
+@keyframes copy-box-appear {
+    0% {
+        top: 1rem;
+        filter: opacity(0);
+    }
+    100% {
+        top: 0rem;
+        filter: opacity(1);
+    }
+}
+
+/** Hue input */
+.hsl-input {
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 0px;
+    border-radius: var(--space);
+    background: transparent;
+    overflow: hidden;
+}
+
+.hsl-input:focus {
+    outline: none;
+}
+
+.hsl-input::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 1rem;
+    width: 0.35rem;
+    background: #ffffff99;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.hsl-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 1rem;
+    width: 0.35rem;
+    background: #ffffff99;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.hsl-input::-moz-range-track {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.hsl-input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/** Header */
+.header {
+    padding: 4vw;
+    text-align: center; 
+}
+
+.header h1 {
+    font-size: 48pt;
+}
+
+/** App */
+.app-body {
+    width: 80%;
+    max-width: 512px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/** Picker */
+.picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.picker-square {
+    min-width: 200px;
+    min-height: 200px;
+    position: relative;
+}
+
+.picker-component {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/** Color info */
+.color-info {
+    flex: 1;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.color-info > input,
+.color-info > .color {
+    width: 100%;
+    height: 1.5rem;
+    min-width: 128px;
+}
